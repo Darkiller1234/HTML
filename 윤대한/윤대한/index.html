@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./mystyle.css">
+</head>
+<body>
+    <form action="">
+        <div id="main">
+            
+            <table>
+                <tr>
+                    <td>
+                        아이디
+                    </td>
+                    <td>
+                        <input type="text" id="id" onblur="Blur(this, getElementById('idFocus'))">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><div class="checkarea" id="idFocus"></div></td>
+                </tr>
+                <tr>
+                    <td>
+                        패스워드
+                    </td>
+                    <td>
+                        <input type="password" id="pwd" onfocus="pwdFocus()" onblur="Blur(this, getElementById('pwdFocus'))">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><div class="checkarea" id="pwdFocus"></div></td>
+                </tr>
+                <tr>
+                    <td>
+                        패스워드 확인
+                    </td>
+                    <td>
+                        <input type="text" id="pwdcheck" onblur="Blur(this, getElementById('pwdcheckFocus'))">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><div class="checkarea" id="pwdcheckFocus"></div></td>
+                </tr>
+                <tr>
+                    <td>
+                        이메일
+                    </td>
+                    <td>
+                        <input type="text" class="oh">@<input type="text" class="oh">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        주소
+                        <br>
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <input type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" width="100%" value="가 입">
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+        
+    </form>
+
+    <script>
+        function pwdFocus(){
+            let text = document.getElementById('pwdFocus');
+            text.innerText = '영문자 대/소문자 특수문자, 숫자 포함 8 ~ 32자';
+        }
+        function pwdBlur(){
+            Blur(document.getElementById('pwd'))
+        }
+
+        function Blur(check, text){
+            if(check.innerText === ''){
+                text.innerText = '필수 입력 항목 입니다'
+            }else{
+                ext.innerText = '';
+            }
+        }
+    </script>
+    
+</body>
+</html>
